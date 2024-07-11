@@ -116,6 +116,7 @@
         .swiper-container {
             margin-top: 2rem; /* Adjust as needed */
             padding-bottom: 1rem; /* Bottom padding for spacing */
+        
         }
         .swiper-slide {
             width: auto;
@@ -242,7 +243,7 @@
         <section id="events">
             <h1>Agenda</h1>
             <p>Een overzicht van aankomende en voorbije evenementen. De "Meer info" knop brengt je naar de facebook groep waar je ook kan aanmelden.</p>>
-            <div class="swiper-container">
+            <div class="swiper-container-events">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="event">
@@ -302,10 +303,12 @@
                                 Het is de eerste trail: we blijven in groep en zoeken een tempo dat voor iedereen aangenaam is. Samen uit, samen thuis.
                                 Let op: de honden blijven ten alle tijden aangelijnd.</p>
                             <a href="https://www.facebook.com/events/1168178674354447" target="_blank" class="cta">Meer info</a>
-                            <div class="past-event">HET WAS GEWELDIG!!</div>
+                            <div class="past-event">HET WAS GEWELDIGs!!</div>
                         </div>
                     </div>
                 </div>
+                         <!-- If we need scrollbar -->
+               <div class="swiper-scrollbar-events"></div>
                 <div class="navigation">
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -314,7 +317,7 @@
         </section>
         <section id="slideshow">
             <h2>Media</h2>
-            <div class="swiper-container">
+            <div class="swiper-container-media">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="images/kaulille.jpg" alt="Slideshow Image">
@@ -336,9 +339,8 @@
                     </div>
                 </div>
 
-
                 <!-- If we need scrollbar -->
-               <div class="swiper-scrollbar"></div>
+               <div class="swiper-scrollbar-media"></div>
             </div>
         </section>
         <section id="contact-us">
@@ -361,7 +363,7 @@
     <!-- Swiper Library JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        var swiper = new Swiper('.swiper-container', {
+        var swiper = new Swiper('.swiper-container-events', {
             slidesPerView: 'auto',
             spaceBetween: 20,
             navigation: {
@@ -373,7 +375,23 @@
                 clickable: true,
             },
             scrollbar: {
-                el: '.swiper-scrollbar',
+                el: '.swiper-scrollbar-events',
+            },
+        });
+
+        var swiperMedia = new Swiper('.swiper-container-media', {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar-media',
             },
         });
 
