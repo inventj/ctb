@@ -24,58 +24,363 @@
     <meta name="twitter:description" content="Ontdek canitrail running evenementen en trails in Vlaanderen, België. Perfect voor hondenliefhebbers en trailrunners.">
     <meta name="twitter:image" content="https://www.canitrailbocholt.be/center.png">
 
+    <!-- Swiper Library CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
     <style>
         body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color:#fff;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+            background: url('https://images.unsplash.com/photo-1595514807053-2c594370091a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+            background-size: cover;
+            z-index: 999;
+            
         }
-        .content {
-            padding: 20px;
-            text-align: center;
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+            z-index: -1; /* Place behind other content */
+            pointer-events: none; /* Allows interaction with elements behind */
+            mix-blend-mode: multiply; /* Blend mode to darken image but not text */
+        }
+        h1, h2, h3, h4, h5, h6,
+        p,
+        .overlay-text { /* Target specific elements you want to keep light */
+            color: white; /* Ensure text remains white */
+        }
+        header {
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        footer {
+            background-color: rgba(29, 185, 84, 0.9);
+            height:200px;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img, footer img {
+            height: 40px;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+        nav {
+            display: flex;
+        }
+        nav a, .menu a {
+            color: inherit;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: normal;
+        }
+        nav a:hover, .menu a:hover {
+            font-weight: bold;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(29, 185, 84, 0.9);
+        }
+        .menu a {
+            margin: 1rem 0;
+        }
+        .container {
+            padding: 2rem;
+            flex: 1;
+        }
+        .swiper-container {
+            margin-top: 2rem; /* Adjust as needed */
+            padding-bottom: 1rem; /* Bottom padding for spacing */
+        }
+        .swiper-slide {
+            width: auto;
+            padding: 0 0.5rem; /* Adjust padding between slides */
+        }
+        .event {
+            background: #1DB954; /* New background color */
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            text-align: center; /* Center text content */
+            max-width: 300px; /* Limit card width */
+            margin-right: 1rem; /* Space between cards */
+        }
+        .event img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            max-height: 200px; /* Limit image height */
+            margin: 0 auto; /* Center image */
+        }
+        .event-date {
+            position: absolute;
+            top: 10px; /* Adjusted position from top */
+            left: 10px; /* Adjusted position from left */
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            padding: 0.3rem 0.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .cta {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: white;
+            color: #1DB954;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 1rem;
+        }
+        .cta:hover {
+            background-color: #17a84b;
+            color: white;
+        }
+        .past-event {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .footer-content p {
+            margin: 0;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            nav {
+                display: none;
+            }
+            .menu {
+                display: flex;
+            }
+            .swiper-container {
+                overflow: hidden;
+            }
+            .swiper-wrapper {
+                display: flex;
+                padding-bottom: 1rem; /* Bottom padding for spacing */
+            }
+            .swiper-slide {
+                width: auto;
+                padding: 0 0.5rem; /* Adjust padding between slides */
+            }
+            .navigation {
+                display: none; /* Hide navigation buttons in slideshow on mobile */
+            }
         }
 
     </style>
 </head>
 <body>
-    <div class="content">
-        <img src="center.png" width="200px" alt="Canitrail logo"/>
-
-        
-        <h1>Volgend evenement</h1>
-        <h2>Zondag 14 Juli 8:30 @ Resterheide</h2>
-        <p>Meer informatie via onze facebook groep of <a href="https://www.facebook.com/share/UeXm1j3sVeyMpg1t/">hier klikken</a></p>
-        <a href="https://www.facebook.com/share/UeXm1j3sVeyMpg1t/"><img src="resterheide.png" width="400px" alt="resterheide"/></a>
-
-        <bR/>
-        <h1>Canitrail Bocholt is een "social run" community waarbij plezier centraal staat.</h1>
-        <h2>Wat is Canitrail?</h2>
-        <p>Een sport voor mens en hond waarbij samen beleven en genieten van het hardlopen in de natuur centraal staat.
-            <br/>We hanteren het principe van "Social Runs", geen "moetjes", "samen uit, samen thuis."
-        </p>
-        <h2>Ik wil meedoen maar ik ben een beginner of ik kan nog maar net 5km lopen?</h2>
-        <p>Het is géén probleem als je pas gestart bent. Hoe beter de conditie van jezelf (en je hond natuurlijk), hoe verder je kan gaan. <br/>
-            We passen het tempo van de groep aan zodat iedereen comfortabel mee kan. <br/>
-            <br/>In groep kan je dikwijls wel nét dat tikkeltje harder of verder ;-)
-            <br/>Qua afstand is het wel belangrijk dat je aangeeft wat kan. Alles is bespreekbaar; dan kunnen we de route beter bepalen.
-            <br/> In de praktijk werken we met lusjes, waardoor jij wel een deel kan aansluiten.
-            <br/> Bijvoorbeeld in totaal 12 km waarvan lus 1; 4km en lus 2; 8km.
-            <br/> TEMPO IS VAN GEEN BELANG
-        </p>
-        <h2>Ik ben niet zeker of dit iets is voor mijn hond?</h2>
-        <p>Als je een sociale hond hebt, kom dan gewoon eens meedoen. Je bent niet de eerste nieuweling en de reacties zijn altijd positief.
-            In praktijk zal je zien dat je hond direct meegaat in de groep.
-        </p>
-
-        <br/>
-        <p>Voorlopig kan je voor onze runs terecht op facebook: <a href="https://www.facebook.com/groups/977872694013026" target="_blank">Klik hier</a>
-            <br/>We zijn ook actief op Instagram. https://www.instagram.com/canitrailbocholt</p>
-        <br/>
-        <a href="https://www.instagram.com/canitrailbocholt" target="_blank"><img src="canitrailbocholt_qr.png" width="100px" alt="instagram canitrailbocholt_qr"/></a>
-        <br/>
-        
-  
+    <div class="overlay"></div>
+    <header>
+        <img src="logo3.png" alt="Canitrail logo">
+        <nav>
+            <a href="#who-we-are">Over ons</a>
+            <a href="#events">Agenda</a>
+            <a href="#contact-us">Contacteer Ons</a>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+    <div class="menu" id="menu">
+        <a href="#who-we-are" onclick="toggleMenu()">Over ons</a>
+        <a href="#events" onclick="toggleMenu()">Agenda</a>
+        <a href="#contact-us" onclick="toggleMenu()">Contacteer Ons</a>
     </div>
+    <div class="container">
+        <section id="who-we-are">
+            <h1>Canitrail Bocholt?</h1>
+            <p>is een "social run" community waarbij plezier centraal staat. Canitrail is een sport voor mens en hond waarbij samen beleven en genieten van het hardlopen in de natuur centraal staat.</p>
+            <p>We hanteren het principe van "Social Runs", geen "moetjes", "samen uit, samen thuis."</p>
+        </section>
+        <section id="events">
+            <h1>Agenda</h1>
+            <p>Een overzicht van aankomende en voorbije evenementen. De "Meer info" knop brengt je naar de facebook groep waar je ook kan aanmelden.</p>>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="event">
+                            <span class="event-date">14 Juli</span>
+                            <img src="https://www.altijdlimburg.com/sites/default/files/styles/header_small/public/import/Begijnenvijvers_3996_1.jpg?itok=e-Qt69kI" alt="Resterheide">
+                            <h3>Canitrail #5 @ Resterheide</h3>
+                            <p>We trekken naar Resterheide, een natuurgebied dat deel uit maakt van Bosland en ligt op de grens van Wijchmaal en Hechtel-Eksel.<br/><br/>
+                                Er zijn verschillende uitgepijlde routes die we aan elkaar kunnen breien.<br/><br/>
+                                Startplaats: Het Begijntje.<br/><br/>
+                                Na de run zorgen we voor een hapje en een drankje.<br/>
+                                De afstanden: 2,5 - 5 - 6,5</p>
+                            <a href="https://www.facebook.com/events/1950541392032010" target="_blank" class="cta">Meer info</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="event" style="background-color: #333;">
+                            <span class="event-date">16 Juni</span>
+                            <img src="https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-6/447291482_10231084194117672_3455234693908771333_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=75d36f&_nc_ohc=R2sBxAzdz1AQ7kNvgHJ61ua&_nc_ht=scontent-bru2-1.xx&oh=00_AYB2QAe8shfxD-9gYviBwG9_tND2JixQhQymZBfAFN7iVQ&oe=6695A730" alt="Event Image">
+                            <h3>Canitrail #4 Kaulille</h3>
+                            <p>De 4de Canitrail zal doorgaan op zondag 16 Juni te Kaulille. De parkeer -en startplaats is toegankelijk vanaf de Kettingbrugweg en ligt op het kruispunt Kettingbrugweg en Belgebergstraat. (Vroegere "schuttekamer" op google maps)
+                                <br/><br/>De loop wordt opgedeeld in 2 lussen waarbij we terug bij het startpunt passeren; de eerste lus van ongeveer 4 kilometer, een 2de lus van ongeveer 6km.</p>
+                            <a href="https://www.facebook.com/events/341353515396984" target="_blank" class="cta">Meer info</a>
+                            <div class="past-event">HET WAS GEWELDIG!!</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide" >
+                        <div class="event" style="background-color: #333;">
+                            <span class="event-date">2 Juni</span>
+                            <img src="https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-6/441676007_10231003963231950_5472480340904445172_n.png?stp=c88.0.1034.540a_dst-jpg_p180x540&_nc_cat=103&ccb=1-7&_nc_sid=75d36f&_nc_ohc=0Iuauz17BRMQ7kNvgF1iDRi&_nc_ht=scontent-bru2-1.xx&oh=00_AYB58nB7UWZ2pH8ZMPvkUVqoaw-6L-OQk4tCoVWgzbIq5A&oe=6695C2B5" alt="Event Image">
+                            <h3>Canitrail #3 Hobos</h3>
+                            <p>De volgende trail gaat door in het Hobos te Pelt. We kunnen hier de bepijlde wandelroutes volgen.</p>
+                            <a href="https://www.facebook.com/events/1112858446682496/" target="_blank" class="cta">Meer info</a>
+                            <div class="past-event">HET WAS GEWELDIG!!</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="event" style="background-color: #333;">
+                            <span class="event-date">18 Mei</span>
+                            <img src="https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-6/440469646_10230945292205211_4471602700649682361_n.jpg?stp=c0.316.1286.671a_dst-jpg_s1080x2048&_nc_cat=110&ccb=1-7&_nc_sid=75d36f&_nc_ohc=47JwtoiAcGUQ7kNvgGnyDU7&_nc_ht=scontent-bru2-1.xx&oh=00_AYDij53nz_ovyaK78ie7GKl5WeH6oWg2mzyH5ytJjwUr0w&oe=6695ABCB" alt="Event Image">
+                            <h3>Canitrail #2 Lozerheide</h3>
+                            <p>Op zaterdag 18 mei staat de 2e canitrail op het programma in het mooie lozen (er is sezoensrally in Reppel). let op! Hopelijk tot dan!!</p>
+                            <a href="https://www.facebook.com/events/3751949205132484/" target="_blank" class="cta">Meer info</a>
+                            <div class="past-event">HET WAS GEWELDIG!!</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="event" style="background-color: #333;">
+                            <span class="event-date">5 Mei</span>
+                            <img src="https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-6/439423113_10230868740531467_8462396150076802609_n.jpg?stp=c0.317.1276.666a_dst-jpg_s1080x2048&_nc_cat=108&ccb=1-7&_nc_sid=75d36f&_nc_ohc=o_rbhleK8zcQ7kNvgGpIowa&_nc_ht=scontent-bru2-1.xx&oh=00_AYAsXVsyDgaJ49Rcep6_nC30i4ipX7NwS_GwtOGXrxIacA&oe=6695B9C9" alt="Event Image">
+                            <h3>Canitrail #1 Kennismakingsloop</h3>
+                            <p>We starten zondag 5 mei om 10u aan het clublokaal van hondenschool De Trouwe Vriend te Bocholt. (Eikenlaan, 3950 Bocholt).
+                                We gaan voor een rondje in de mooie omgeving van Reppel van ongeveer 5 kilometer.
+                                Het is de eerste trail: we blijven in groep en zoeken een tempo dat voor iedereen aangenaam is. Samen uit, samen thuis.
+                                Let op: de honden blijven ten alle tijden aangelijnd.</p>
+                            <a href="https://www.facebook.com/events/1168178674354447" target="_blank" class="cta">Meer info</a>
+                            <div class="past-event">HET WAS GEWELDIG!!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+        <section id="slideshow">
+            <h2>Media</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/kaulille.jpg" alt="Slideshow Image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/oudsbergen trail-157.webp" alt="Slideshow Image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/oudsbergen trail-34.webp" alt="Slideshow Image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/oudsbergen trail-52.webp" alt="Slideshow Image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/oudsbergen trail-67.webp" alt="Slideshow Image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/oudsbergen trail-68.webp" alt="Slideshow Image">
+                    </div>
+                </div>
+
+
+                <!-- If we need scrollbar -->
+               <!-- <div class="swiper-scrollbar"></div>-->
+            </div>
+        </section>
+        <section id="contact-us">
+            <h2>Contacteer Ons</h2>
+            <p>Voor vragen en informatie kunt u contact opnemen via de sociale kanalen hieronder.</p>
+            <p>U mag ook altijd een mailtje sturen naar <a style="color: white" href="mailto:peeters.joeri@gmail.com">Joeri</a></p>
+        </section>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>2024 Canitrail Bocholt.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/groups/977872694013026" target="_blank"><img src="Rounded_Facebook_svg-128.webp" alt="Facebook"></a>
+                <a href="https://www.instagram.com/canitrailbocholt" target="_blank"><img src="Rounded_Instagram_svg-128.webp" alt="Instagram"></a>
+                <a href="https://www.strava.com/clubs/1262458" target="_blank"><img src="323_Strava_logo-64.webp" alt="Strava"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper Library JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </body>
 </html>
