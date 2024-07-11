@@ -262,8 +262,9 @@
     <div class="container">
         <section id="who-we-are">
             <h1>Canitrail Bocholt?</h1>
-            <p>is een "social run" community waarbij plezier centraal staat. Canitrail is een sport voor mens en hond waarbij samen beleven en genieten van het hardlopen in de natuur centraal staat.</p>
-            <p>We hanteren het principe van "Social Runs", geen "moetjes", "samen uit, samen thuis."</p>
+            <p>Canitrail is een sport voor mens en hond waarbij samen beleven en genieten van het hardlopen in de natuur centraal staat.</p>
+            <p>Wij hanteren het principe van "Social Runs", geen "moetjes", "samen uit, samen thuis."</p>
+            <p>Snelheid is van ondergeschikt belang en tijdens een run worden er meerdere lusjes aangeboden zodat afstanden zelf bepaald kunnen worden.</p>
         </section>
         <section id="events">
             <h1>Agenda</h1>
@@ -363,9 +364,7 @@
                         <img src="images/oudsbergen trail-68.webp" alt="Slideshow Image">
                     </div>
                 </div>
-
-                <!-- If we need scrollbar -->
-               <div class="swiper-scrollbar-media"></div>
+                <div class="swiper-pagination-media"></div>
             </div>
         </section>
         <section id="contact-us">
@@ -392,11 +391,11 @@
             slidesPerView: 'auto',
             spaceBetween: 10,
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next-events',
+                prevEl: '.swiper-button-prev-evens',
             },
             pagination: {
-                el: '.swiper-pagination',
+                el: '.swiper-pagination-events',
                 clickable: true,
             },
             scrollbar: {
@@ -406,13 +405,16 @@
 
         var swiperMedia = new Swiper('.swiper-container-media', {
             slidesPerView: 'auto',
-            spaceBetween: 10,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 2000
+            },
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next-media',
+                prevEl: '.swiper-button-prev-media',
             },
             pagination: {
-                el: '.swiper-pagination',
+                el: '.swiper-pagination-media',
                 clickable: true,
             },
             scrollbar: {
