@@ -391,10 +391,18 @@
         <section id="slideshow">
             <h2>Media</h2>
             <div class="swiper swiper1">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide swiper-slide-image"><img src="images/oudsbergen trail-157.webp" alt="Slide 4" class="d-block w-100"></div>
-                    <div class="swiper-slide swiper-slide-image"><img src="images/reppel.jpg" alt="Slide 5" class="d-block w-100"></div>
-                    <div class="swiper-slide swiper-slide-image"><img src="images/oudsbergen trail-34.webp" alt="Slide 6" class="d-block w-100"></div>
+                <div class="swiper-wrapper swiper-wrapper-images">
+                    <div class="swiper-slide swiper-slide-image"><img src="images/DSC_0124.JPG" alt="" class="d-block w-100"></div>
+                    <div class="swiper-slide swiper-slide-image"><img src="images/DSC_0158.JPG" alt="" class="d-block w-100"></div>
+                    <div class="swiper-slide swiper-slide-image"><img src="images/DSC_0182.JPG" alt="" class="d-block w-100"></div>
+                    <div class="swiper-slide swiper-slide-image"><img src="images/DSC_0168.JPG" alt="" class="d-block w-100"></div>
+                    <div class="swiper-slide swiper-slide-image"><img src="images/oudsbergen trail-157.webp" alt="" class="d-block w-100"></div>
+                    <div class="swiper-slide swiper-slide-image"><img src="images/reppel.jpg" alt="" class="d-block w-100"></div>
+                    <div class="swiper-slide swiper-slide-image"><img src="images/oudsbergen trail-34.webp" alt="" class="d-block w-100"></div>
+                    <div class="swiper-slide swiper-slide-image"><img src="images/oudsbergen trail-52.webp" alt="" class="d-block w-100"></div>
+                    <div class="swiper-slide swiper-slide-image"><img src="images/oudsbergen trail-67.webp" alt="" class="d-block w-100"></div>
+                    <div class="swiper-slide swiper-slide-image"><img src="images/oudsbergen trail-68.webp" alt="" class="d-block w-100"></div>
+                    <div class="swiper-slide swiper-slide-image"><img src="images/hobos.jpeg" alt="" class="d-block w-100"></div>
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
@@ -437,6 +445,21 @@
             },
         });
 
+
+            // Function to randomize the slides
+    function randomizeSlides() {
+        const swiperWrapper = document.querySelector('.swiper-wrapper-images');
+        const slides = Array.from(swiperWrapper.children); // Get the slides as an array
+
+        // Shuffle the slides
+        slides.sort(() => Math.random() - 0.5);
+
+        // Append the shuffled slides back to the wrapper
+        slides.forEach(slide => swiperWrapper.appendChild(slide));
+    }
+
+    // Call the function to randomize slides
+    randomizeSlides();
 
     // Initialize the first Swiper
     const swiper1 = new Swiper('.swiper1', {
