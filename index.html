@@ -142,6 +142,13 @@
             max-width: 100vh;
         }
 
+        .swiper-slide-image img {
+            width: 100%; /* Ensure images take full width */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 100%; /* Prevent exceeding slide height */
+            object-fit: contain; /* Ensure the entire image is visible */
+        }
+
         .event {
             background: #1DB954; /* New background color */
             padding: 1rem;
@@ -385,9 +392,9 @@
             <h2>Media</h2>
             <div class="swiper swiper1">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="images/oudsbergen trail-157.webp" alt="Slide 4" class="d-block w-100"></div>
-                    <div class="swiper-slide"><img src="images/reppel.jpg" alt="Slide 5" class="d-block w-100"></div>
-                    <div class="swiper-slide"><img src="images/oudsbergen trail-34.webp" alt="Slide 6" class="d-block w-100"></div>
+                    <div class="swiper-slide swiper-slide-image"><img src="images/oudsbergen trail-157.webp" alt="Slide 4" class="d-block w-100"></div>
+                    <div class="swiper-slide swiper-slide-image"><img src="images/reppel.jpg" alt="Slide 5" class="d-block w-100"></div>
+                    <div class="swiper-slide swiper-slide-image"><img src="images/oudsbergen trail-34.webp" alt="Slide 6" class="d-block w-100"></div>
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
