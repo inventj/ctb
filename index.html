@@ -243,6 +243,88 @@
                 display: none;
             }
         }
+
+        /* General container for the catalog */
+.catalog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Styling each item in the catalog */
+.item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.item-images {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.item-images img {
+    width: 48%; /* Adjust width to fit two images side by side */
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+/* Price styling */
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+/* Button/Link Styling */
+a {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+a:hover {
+    background-color: #2980b9;
+}
+
+/* Heading Styling */
+h3 {
+    font-size: 1.4em;
+    margin-top: 10px;
+    color: #333;
+}
+
+.item p {
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+}
+
+a.kleding {
+    background-color: #1DB954; /* Yellow background color */
+}
+
+/* Hover effect for the CTA */
+a.kleding:hover {
+    background-color: #f39c12; /* Darker yellow when hovered */
+}
+
+/* Optional: Add focus outline for accessibility */
+a.kleding:focus {
+    outline: 2px solid #e67e22; /* Add outline for focus state */
+}
     </style>
 </head>
 <body>
@@ -251,6 +333,7 @@
     <header>
         <img src="logo3.png" alt="Canitrail logo">
         <nav>
+            <a class="kleding" href="#kleding">Kleding</a>
             <a href="#who-we-are">Over ons</a>
             <a href="#events">Agenda</a>
             <a href="#contact-us">Contacteer Ons</a>
@@ -280,6 +363,17 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="event">
+                            <span class="event-date">1 December</span>
+                            <img src="https://www.internetgazet.be/imgeve/groot/69545.jpg" alt="House of Nature trail">
+                            <h3>Canitrail #9 - Lommel </h3>
+                            <p>
+                                Startplaats: House of nature PARKING, Speelpleinstraat z/n Lommel
+                            </p>
+                            <a href="https://www.facebook.com/events/s/canitrail-9-lommel/416037804890547" target="_blank" class="cta">Meer info</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="event">
                             <span class="event-date">3 November</span>
                             <img src="https://cdn-az.allevents.in/events9/banners/c6061f06fee3a0fe767b2e4b7aa3f6be3383a5799a124d31d037c561fbb6aa19-rimg-w1138-h1472-dc010101-gmir?v=1729559860" alt="Laurabossen trail">
                             <h3>Canitrail #8 - Laurabossen Weert</h3>
@@ -288,6 +382,7 @@
                                 (Locatie: 51.224451, 5.606739)
                             </p>
                             <a href="https://www.facebook.com/events/1293315178746631/" target="_blank" class="cta">Meer info</a>
+                            <div class="past-event">HET WAS GEWELDIG!!</div>
                         </div>
                     </div>
                     <div class="swiper-slide">
@@ -300,6 +395,7 @@
                                 De locatie is n.n.b Updat volgt snel!
                             </p>
                             <a href="https://www.facebook.com/events/1130211635261975" target="_blank" class="cta">Meer info</a>
+                            <div class="past-event">HET WAS GEWELDIG!!</div>
                         </div>
                     </div>
                     <div class="swiper-slide">
@@ -409,6 +505,89 @@
                 <div class="swiper-button-prev"></div>
             </div>
         </section>
+
+        <section id="kleding">
+            <h2>Kleding</h2>
+            <h4>Hieronder een overzicht van de aangeboden kleding. (bovenlichaam)</h4>
+            <div class="catalog-container">
+        
+                <!-- Item 1 -->
+                <div class="item">
+                    <div class="item-images">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Singlet_front.jpg" alt="Athletics Singlet front">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Singlet_back.jpg" alt="Athletics Singlet back">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Singlet_left.jpg" alt="Athletics Singlet left">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Singlet_right.jpg" alt="Athletics Singlet right">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Singlet_persp.jpg" alt="Athletics Singlet perspective">
+                    </div>
+                    <h3>HARDLOOPSINGLET</h3>
+                    <p>Zomershirt zonder mouwen voor in de zomer.</p>
+                    <div class="price">26 Euro Excl BTW</div>
+                    <a href="https://www.bioracer.be/NL/cycling/team/628817/slug_du" target="_blank">Details</a>
+                </div>
+        
+                <!-- Item 2 -->
+                <div class="item">
+                    <div class="item-images">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Shirt-SS_front.jpg" alt="Athletics Shirt SS front">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Shirt-SS_back.jpg" alt="Athletics Shirt SS back">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Shirt-SS_left.jpg" alt="Athletics Shirt SS left">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Shirt-SS_right.jpg" alt="Athletics Shirt SS right">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Shirt-SS_persp.jpg" alt="Athletics Shirt SS perspective">
+                    </div>
+                    <h3>HARDLOOPSHIRT Korte Mouw (KM)</h3>
+                    <p>Ademend tshirt met korte mouwen.</p>
+                    <div class="price">30 Euro Excl BTW</div>
+                    <a href="https://www.bioracer.be/NL/cycling/team/628812/slug_du" target="_blank">Details</a>
+                </div>
+        
+                <!-- Item 3 -->
+                <div class="item">
+                    <div class="item-images">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Shirt-LS_front.jpg" alt="Athletics Shirt LS front">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Shirt-LS_back.jpg" alt="Athletics Shirt LS back">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Shirt-LS_left.jpg" alt="Athletics Shirt LS left">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Shirt-LS_right.jpg" alt="Athletics Shirt LS right">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Shirt-LS_persp.jpg" alt="Athletics Shirt LS perspective">
+                    </div>
+                    <h3>HARDLOOPSHIRT LANGE MOUW</h3>
+                    <p>Ademend tshirt met lange mouwen.</p>
+                    <div class="price">41,25 Euro Excl BTW</div>
+                    <a href="https://www.bioracer.be/NL/cycling/team/628815/slug_du" target="_blank">Details</a>
+                </div>
+        
+                <!-- Item 4 -->
+                <div class="item">
+                    <div class="item-images">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Wintershirt-LS_front.jpg" alt="Wintershirt LS front">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Wintershirt-LS_back.jpg" alt="Wintershirt LS back">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Wintershirt-LS_left.jpg" alt="Wintershirt LS left">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Wintershirt-LS_right.jpg" alt="Wintershirt LS right">
+                        <img src="./images/bioracer/PRJ24-011751_Athletics-Wintershirt-LS_persp.jpg" alt="Wintershirt LS perspective">
+                    </div>
+                    <h3>THERMISCH HARDLOOPSHIRT LANGE MOUW</h3>
+                    <p>Shirt met lange mouwen uit tempest stof, licht isolerend speciaal voor in de winter. Licht waterafstotend. Voor echte koude dagen of als opwarmer/voor en na</p>
+                    <div class="price">53,75 Euro Excl BTW</div>
+                    <a href="https://www.bioracer.be/NL/cycling/team/628825/slug_du" target="_blank">Details</a>
+                </div>
+        
+                <!-- Item 5 -->
+                <div class="item">
+                    <div class="item-images">
+                        <img src="./images/bioracer/regenjas.png" alt="Hardloop Regenjas">
+                    </div>
+                    <h3>HARDLOOP REGENJAS</h3>
+                    <p><b>Let Op</b>De afbeelding hierboven is het standaard design.<br/> 
+                        Onze jacket gaat uiteraard hetzelfde design hebben als de shirts.<br/>
+                        Beschermt tegen regen en wind. Water -en winddicht. Heeft een binnenzak. RITS. Kan ook als voor en na jasje.</p>
+                    <div class="price">76,25 Euro Excl BTW</div>
+                    <a href="https://www.bioracer.be/NL/cycling/team/628828/slug_du" target="_blank">Details</a>
+                </div>
+        
+            </div>
+        </section>
+        
+
         <section id="contact-us">
             <h2>Contacteer Ons</h2>
             <p>Voor vragen en informatie kunt u contact opnemen via de sociale kanalen hieronder.</p>
