@@ -226,13 +226,25 @@
             .swiper-container {
                 overflow: hidden;
             }
+
             .swiper-wrapper {
                 display: flex;
                 padding-bottom: 1rem; /* Bottom padding for spacing */
+                align-items: center; /* Center the slides vertically */
             }
+
             .swiper-slide {
-                width: auto;
+                flex: 0 0 auto; /* Do not grow or shrink but allow basis as auto */
                 padding: 0 0.5rem; /* Adjust padding between slides */
+                display: flex; /* Apply flexbox for centering */
+                justify-content: center; /* Center the content horizontally */
+                align-items: center; /* Center the content vertically */
+            }
+
+            .swiper-slide img {
+                display: block;
+                max-width: 100%; /* Ensure the image scales down if necessary */
+                height: auto; /* Maintain aspect ratio */
             }
             .navigation {
                 display: none; /* Hide navigation buttons in slideshow on mobile */
