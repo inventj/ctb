@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canitrail Bocholt | Lopen met je hond</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Ontdek de beste canitrail running evenementen en trails in Vlaanderen, België. Sluit je aan bij onze gemeenschap voor spannende hondvriendelijke trailrunning avonturen.">
+    <meta name="keywords" content="canitrail, canitrail Vlaanderen, canitrail België, trailrunning met honden, canicross Vlaanderen, canicross België, hond trailrunning, buitenactiviteiten Vlaanderen, avontuurlijke sporten België, fitness met honden België, hondvriendelijke trails Vlaanderen">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.canitrailbocholt.be/">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Canitrail Running in Vlaanderen, België">
+    <meta property="og:description" content="Doe mee met onze canitrail running gemeenschap in Vlaanderen, België. Verken hondvriendelijke trails en neem deel aan spannende evenementen.">
+    <meta property="og:image" content="https://www.canitrailbocholt.be/center.png">
+    <meta property="og:url" content="https://www.canitrailbocholt.be/reglement">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Canitrail Running in Vlaanderen, België">
+    <meta name="twitter:description" content="Ontdek canitrail running evenementen en trails in Vlaanderen, België. Perfect voor hondenliefhebbers en trailrunners.">
+    <meta name="twitter:image" content="https://www.canitrailbocholt.be/center.png">
+
+    <!-- Swiper Library CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <style>
+    html {
+        overflow-x: hidden;
+    }
+
+    .content-wrapper {
+        width: 90%;
+        max-width: 100vw;
+        margin: 0 auto; /* Center the wrapper */
+        padding: 20px; /* Add padding for spacing */
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional shadow for better visual separation */
+    }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+            background: url('https://images.unsplash.com/photo-1595514807053-2c594370091a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+            background-size: cover;
+            z-index: 999;
+            overflow-x: hidden;
+            
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+            z-index: -1; /* Place behind other content */
+            pointer-events: none; /* Allows interaction with elements behind */
+            mix-blend-mode: multiply; /* Blend mode to darken image but not text */
+        }
+        h1, h2, h3, h4, h5, h6,
+        p,
+        .overlay-text { /* Target specific elements you want to keep light */
+            color: white; /* Ensure text remains white */
+        }
+        header {
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        footer {
+            background-color: rgba(29, 185, 84, 0.9);
+            height:200px;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img, footer img {
+            height: 40px;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+        nav {
+            display: flex;
+        }
+        nav a, .menu a {
+            color: inherit;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: normal;
+        }
+        nav a:hover, .menu a:hover {
+            font-weight: bold;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(29, 185, 84, 0.9);
+        }
+        .menu a {
+            margin: 1rem 0;
+        }
+        .container {
+            padding: 2rem;
+            flex: 1;
+        }
+        .swiper-container-events, .swiper-container-media {
+            margin-top: 2rem; /* Adjust as needed */
+            padding-bottom: 1rem; /* Bottom padding for spacing */
+            max-width: 90%;
+        
+        }
+        .swiper-slide {
+            width: auto;
+            padding: 0 0.5rem; /* Adjust padding between slides */
+            max-width: 100vw;
+        }
+
+        .swiper-slide img {
+            height:auto;
+            max-width: 100vh;
+        }
+
+        .swiper-slide-image img {
+            width: 100%; /* Ensure images take full width */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 100%; /* Prevent exceeding slide height */
+            object-fit: contain; /* Ensure the entire image is visible */
+        }
+
+        .event {
+            background: #1DB954; /* New background color */
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            text-align: center; /* Center text content */
+            max-width: 300px; /* Limit card width */
+            margin-right: 1rem; /* Space between cards */
+        }
+        .event img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            max-height: 200px; /* Limit image height */
+            margin: 0 auto; /* Center image */
+        }
+        .event-date {
+            position: absolute;
+            top: 10px; /* Adjusted position from top */
+            left: 10px; /* Adjusted position from left */
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            padding: 0.3rem 0.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .cta {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: white;
+            color: #1DB954;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 1rem;
+        }
+        .cta:hover {
+            background-color: #17a84b;
+            color: white;
+        }
+        .past-event {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .footer-content p {
+            margin: 0;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            nav {
+                display: none;
+            }
+            .menu {
+                display: flex;
+            }
+            .swiper-container {
+                overflow: hidden;
+            }
+
+            .swiper-wrapper {
+                display: flex;
+                padding-bottom: 1rem; /* Bottom padding for spacing */
+                align-items: center; /* Center the slides vertically */
+            }
+
+            .swiper-slide {
+                flex: 0 0 auto; /* Do not grow or shrink but allow basis as auto */
+                padding: 0 0.5rem; /* Adjust padding between slides */
+                display: flex; /* Apply flexbox for centering */
+                justify-content: center; /* Center the content horizontally */
+                align-items: center; /* Center the content vertically */
+            }
+
+            .swiper-slide img {
+                display: block;
+                max-width: 100%; /* Ensure the image scales down if necessary */
+                height: auto; /* Maintain aspect ratio */
+            }
+            .navigation {
+                display: none; /* Hide navigation buttons in slideshow on mobile */
+            }
+        }
+        @media (max-width: 400px) {
+            .menu {
+                display: none;
+            }
+        }
+
+        /* General container for the catalog */
+.catalog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Styling each item in the catalog */
+.item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.item-images {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.item-images img {
+    width: 48%; /* Adjust width to fit two images side by side */
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+/* Price styling */
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+/* Button/Link Styling */
+a {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+a:hover {
+    background-color: #2980b9;
+}
+
+/* Heading Styling */
+h3 {
+    font-size: 1.4em;
+    margin-top: 10px;
+    color: #333;
+}
+
+.item p {
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+}
+
+a.kleding {
+    background-color: #1DB954; /* Yellow background color */
+}
+
+/* Hover effect for the CTA */
+a.kleding:hover {
+    background-color: #f39c12; /* Darker yellow when hovered */
+}
+
+/* Optional: Add focus outline for accessibility */
+a.kleding:focus {
+    outline: 2px solid #e67e22; /* Add outline for focus state */
+}
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+    <div class="overlay"></div>
+    <header>
+        <img src="logo3.png" alt="Canitrail logo">
+        <nav>
+            <a href="#who-we-are">Over ons</a>
+            <a href="#events">Agenda</a>
+            <a href="#contact-us">Contacteer Ons</a>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+    <div class="menu" id="menu">
+        <a href="/">Over ons</a>
+        <a href="/">Agenda</a>
+        <a href="lidworden.html">Lid worden</a>
+        <a href="reglement.html">Reglement</a>
+        <a href="/">Contacteer Ons</a>
+    </div>
+    <div class="container">
+        <section id="reglement">
+            <h1>Algemeen Reglement van Canitrail Bocholt</h1>
+
+            <p>
+                <strong>Naam van de vereniging:</strong> Canitrail Bocholt<br>
+                <strong>VCode:</strong> V0041191<br>
+                <strong>Contact:</strong>
+                <a href="mailto:canitrailbocholt@gmail.com" style="color:white;">
+                    canitrailbocholt@gmail.com
+                </a>
+            </p>
+
+            <hr>
+
+            <h2>Artikel 1 – Doel en activiteiten</h2>
+            <p>
+                Canitrail Bocholt is een sociale loopclub met honden met als doel om honden
+                en hun baasjes op een ontspannen, veilige en sportieve manier samen te laten
+                bewegen. Door groepslopen en wandelingen te organiseren willen we zowel de
+                fysieke conditie van mens en dier bevorderen als sociale verbondenheid stimuleren.
+            </p>
+            <p>
+                We zetten in op verantwoord sporten met aandacht voor dierenwelzijn, correcte
+                omgangsvormen en een positieve sfeer, zodat zowel beginners als ervaren lopers
+                kunnen genieten van een gezonde, toegankelijke en gezellige vrijetijdsactiviteit
+                in de natuur.
+            </p>
+            <p>
+                Om dit doel te bereiken organiseert de vereniging in de eerste plaats sociale
+                groepsloopjes voor leden en sympathisanten. Daarnaast streeft de vereniging
+                ernaar om in de toekomst ook publieke evenementen te organiseren.
+            </p>
+
+            <h2>Artikel 2 – Leden</h2>
+            <p>
+                De vereniging staat open voor iedereen die in een goede algemene gezondheid
+                verkeert en in staat is om op een verantwoorde manier deel te nemen aan de
+                activiteiten. Deelname gebeurt steeds op eigen risico.
+            </p>
+            <p>
+                Door lid te worden verklaart het lid dat hij/zij en zijn/haar honden in goede
+                gezondheid verkeren en zelf verantwoordelijk blijven voor gezondheid,
+                gedrag en veiligheid.
+            </p>
+            <p>
+                De vereniging en haar vertegenwoordigers kunnen niet aansprakelijk worden
+                gesteld voor eventuele ongevallen of daaruit voortvloeiende schade.
+            </p>
+            <p>
+                Lid worden kan door het digitaal ondertekenen van dit reglement via het
+                inschrijvingsformulier:
+                <a href="https://www.canitrailbocholt.be/lidworden" style="color:white;">
+                    www.canitrailbocholt.be/lidworden
+                </a>
+            </p>
+
+            <h2>Artikel 3 – Ledenbijdrage</h2>
+            <p>
+                Er is geen ledenbijdrage. Deelname aan activiteiten is gratis.
+                De vertegenwoordigers kunnen dit in de toekomst herzien.
+            </p>
+
+            <h2>Artikel 4 – Vertegenwoordigers</h2>
+            <p>
+                De vereniging wordt bestuurd door een team van vertegenwoordigers die instaan
+                voor het dagelijks bestuur, financieel beheer en organisatie van activiteiten.
+            </p>
+
+            <ul style="color: white;">
+                <li>Evie Vandersteegen</li>
+                <li>Britt Van Bilsen</li>
+                <li>Elvire Wevers</li>
+                <li>Joeri Peeters</li>
+            </ul>
+
+            <p>
+                De vereniging en haar vertegenwoordigers kunnen niet aansprakelijk worden
+                gesteld voor eventuele ongevallen.
+            </p>
+
+            <h2>Artikel 5 – Vergaderingen</h2>
+            <p>
+                Minstens één keer per jaar wordt een algemene vergadering gehouden.
+                Beslissingen worden in principe genomen door de vertegenwoordigers,
+                eventueel na inspraak van de leden.
+            </p>
+
+            <h2>Artikel 6 – Financieel beheer</h2>
+            <p>
+                De vereniging houdt een eenvoudige boekhouding bij.
+                Een financieel verslag wordt jaarlijks gedeeld met de leden.
+            </p>
+
+            <h2>Artikel 8 – Gedragscode</h2>
+            <ul style="color: white;">
+                <li>Leden gedragen zich respectvol tegenover elkaar.</li>
+                <li>Discriminatie, pesten en geweld worden niet getolereerd.</li>
+                <li>Niet-sociale of gevaarlijke honden kunnen geweigerd of uitgesloten worden.</li>
+            </ul>
+
+            <p>
+                Bij extern georganiseerde evenementen wordt verwacht dat leden zich
+                respectvol en verantwoordelijk gedragen en de normen en waarden van
+                de vereniging uitdragen.
+            </p>
+
+            <h2>Artikel 9 – Clubkleding</h2>
+            <p>
+                Leden kunnen vrijblijvend clubkleding aankopen (sport- en vrijetijdskleding).
+                Aankoop is niet verplicht en gebeurt aan kostprijs.
+            </p>
+
+            <h2>Artikel 10 – Grenzen van deelname</h2>
+            <p>
+                Deelname aan activiteiten is een gunst en geen afdwingbaar recht.
+                De vertegenwoordigers kunnen activiteiten aanpassen of annuleren
+                indien nodig.
+            </p>
+
+            <h2>Artikel 11 – Privacy</h2>
+            <p>
+                Persoonsgegevens worden enkel gebruikt voor interne werking en
+                niet gedeeld met derden zonder toestemming.
+            </p>
+            <p>
+                Door lid te worden ga je akkoord met het gebruik van foto’s van
+                jezelf en je hond op sociale media en de website, tenzij expliciet
+                anders gemeld.
+            </p>
+
+            <h2>Artikel 12 – Ontbinding</h2>
+            <p>
+                Bij stopzetting van de vereniging wordt het eventuele vermogen
+                toegewezen aan een gelijkaardig initiatief of goed doel,
+                na beslissing door de leden.
+            </p>
+        </section>
+
+        <hr/>
+        <a href="reglement.pdf" style="color:white;">
+            U kan dit ook als PDF downloaden
+        </a>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>2025 Canitrail Bocholt.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/groups/977872694013026" target="_blank"><img src="Rounded_Facebook_svg-128.webp" alt="Facebook"></a>
+                <a href="https://www.instagram.com/canitrailbocholt" target="_blank"><img src="Rounded_Instagram_svg-128.webp" alt="Instagram"></a>
+                <a href="https://www.strava.com/clubs/1262458" target="_blank"><img src="323_Strava_logo-64.webp" alt="Strava"></a>
+            </div>
+        </div>
+    </footer>
+</div>
+    <!-- Swiper Library JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container-events', {
+            slidesPerView: 'auto',
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next-events',
+                prevEl: '.swiper-button-prev-evens',
+            },
+            pagination: {
+                el: '.swiper-pagination-events',
+                clickable: true,
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar-events',
+            },
+        });
+
+
+            // Function to randomize the slides
+    function randomizeSlides() {
+        const swiperWrapper = document.querySelector('.swiper-wrapper-images');
+        const slides = Array.from(swiperWrapper.children); // Get the slides as an array
+
+        // Shuffle the slides
+        slides.sort(() => Math.random() - 0.5);
+
+        // Append the shuffled slides back to the wrapper
+        slides.forEach(slide => swiperWrapper.appendChild(slide));
+    }
+
+    // Call the function to randomize slides
+    randomizeSlides();
+
+    // Initialize the first Swiper
+    const swiper1 = new Swiper('.swiper1', {
+        loop: true,
+        pagination: {
+            el: '.swiper1 .swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper1 .swiper-button-next',
+            prevEl: '.swiper1 .swiper-button-prev',
+        },
+    });
+
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>
