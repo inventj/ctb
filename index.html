@@ -133,6 +133,21 @@ section{padding-block:56px}
 .gallery img{width:100%;height:100%;object-fit:cover}
 .hint{color:var(--muted);font-size:.9rem}
 
+/* sponsors */
+.sponsors{display:flex;flex-wrap:wrap;gap:12px;list-style:none;margin:28px 0 0;padding:0}
+.sponsor-card{display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;height:120px;width:min(100%,170px)}
+.sponsor-card img{height:80px;width:auto;max-width:100%}
+.sponsor-card.banner{width:min(100%,384px);height:auto;aspect-ratio:16/5;border:0;background:#00201b}
+.sponsor-card.banner a{display:block;width:100%;height:100%}
+.sponsor-card.banner img{width:100%;height:100%;object-fit:cover}
+.logo-on-dark{display:none}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .logo-on-light{display:none}
+  :root:not([data-theme="light"]) .logo-on-dark{display:block}
+}
+:root[data-theme="dark"] .logo-on-light{display:none}
+:root[data-theme="dark"] .logo-on-dark{display:block}
+
 /* contact + footer */
 .contact{background:var(--band);color:var(--band-ink)}
 .contact p{color:#c4cfb9}
@@ -316,6 +331,23 @@ footer{background:var(--band);color:#8d9a80;padding-block:20px;font-size:.9rem;b
       <figure><img loading="lazy" decoding="async" width="400" height="500" src="images/thumbs/gallery-10.webp" alt="Laurabossen in Weert"></figure>
       <figure><img loading="lazy" decoding="async" width="400" height="500" src="images/thumbs/gallery-11.webp" alt="Na de run"></figure>
       <figure><img loading="lazy" decoding="async" width="400" height="500" src="images/thumbs/gallery-12.webp" alt="Trail in Reppel"></figure>
+    </div>
+  </section>
+
+  <section id="sponsors" aria-labelledby="h-sponsors">
+    <div class="wrap">
+      <p class="eyebrow">Sponsors</p>
+      <h2 id="h-sponsors">Met dank aan onze sponsors</h2>
+      <p style="margin-top:18px">Zij steunen Canitrail Bocholt.</p>
+      <ul class="sponsors">
+        <li class="sponsor-card">
+          <img class="logo-on-light" src="images/sponsors/atelier-vlier-zwart.svg" alt="Atelier Vlier" height="80" loading="lazy">
+          <img class="logo-on-dark" src="images/sponsors/atelier-vlier-wit.svg" alt="Atelier Vlier" height="80" loading="lazy">
+        </li>
+        <li class="sponsor-card banner">
+          <a href="https://entr.online" target="_blank" rel="noopener"><img src="images/sponsors/entr-online.webp" alt="Entr.Online" width="800" height="250" loading="lazy"></a>
+        </li>
+      </ul>
     </div>
   </section>
 
