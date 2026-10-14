@@ -136,6 +136,7 @@ section{padding-block:56px}
 /* sponsors */
 .sponsors{display:flex;flex-wrap:wrap;gap:12px;list-style:none;margin:28px 0 0;padding:0}
 .sponsor-card{display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;height:120px;width:min(100%,170px)}
+.sponsor-card>a:not(.x){display:flex;align-items:center;justify-content:center;width:100%;height:100%}
 .sponsor-card img{height:80px;width:auto;max-width:100%}
 .sponsor-card.banner{width:min(100%,384px);height:auto;aspect-ratio:16/5;border:0;background:#00201b}
 .sponsor-card.banner a{display:block;width:100%;height:100%}
@@ -341,8 +342,10 @@ footer{background:var(--band);color:#8d9a80;padding-block:20px;font-size:.9rem;b
       <p style="margin-top:18px">Zij steunen Canitrail Bocholt.</p>
       <ul class="sponsors">
         <li class="sponsor-card">
-          <img class="logo-on-light" src="images/sponsors/atelier-vlier-zwart.svg" alt="Atelier Vlier" height="80" loading="lazy">
-          <img class="logo-on-dark" src="images/sponsors/atelier-vlier-wit.svg" alt="Atelier Vlier" height="80" loading="lazy">
+          <a href="https://ateliervlier.be/" target="_blank" rel="noopener" aria-label="Atelier Vlier">
+            <img class="logo-on-light" src="images/sponsors/atelier-vlier-zwart.svg" alt="Atelier Vlier" height="80" loading="lazy">
+            <img class="logo-on-dark" src="images/sponsors/atelier-vlier-wit.svg" alt="Atelier Vlier" height="80" loading="lazy">
+          </a>
         </li>
         <li class="sponsor-card banner">
           <a href="https://entr.online" target="_blank" rel="noopener"><img src="images/sponsors/entr-online.webp" alt="Entr.Online" width="800" height="250" loading="lazy"></a>
