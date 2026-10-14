@@ -139,14 +139,18 @@ section{padding-block:56px}
 .past-wrap .past{margin-top:0}
 .past{margin-top:12px;border-top:1px solid var(--line)}
 .past details{border-bottom:1px solid var(--line)}
-.past summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:64px 1fr 24px;align-items:center;gap:12px;min-height:64px;padding:10px 0}
+.past summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:64px 76px 1fr 24px;align-items:center;gap:10px;min-height:64px;padding:10px 0}
 .past summary::-webkit-details-marker{display:none}
 .past summary::after{content:"+";font:600 1.5rem var(--font-body);color:var(--accent);text-align:center}
 .past details[open] summary::after{content:"–"}
+.past .lg{display:flex;align-items:center;justify-content:center}
+.past .ev-logo{display:block;max-width:100%;width:auto;height:auto;max-height:44px}
+.past .ev-logo.chip{padding:4px 6px;background:#fff;border-radius:6px;box-sizing:border-box;width:100%;object-fit:contain}
+.past .ev-logo.own{max-height:40px}
 .past .d{font:800 1rem/1.1 var(--font-display);color:var(--accent);text-transform:uppercase}
 .past .t{font-weight:600;min-width:0}
 .past .t small{display:block;color:var(--muted);font-weight:400}
-.past .more{padding:0 0 18px 76px;color:var(--muted)}
+.past .more{padding:0 0 18px 150px;color:var(--muted)}
 .past .more p{margin-bottom:.7em}
 .link{color:var(--accent);font-weight:600;text-underline-offset:3px}
 
@@ -213,7 +217,7 @@ footer{background:var(--band);color:#8d9a80;padding-block:20px;font-size:.9rem;b
   .gallery figure{flex-basis:340px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-@media (min-width:760px){.also a{grid-template-columns:72px 150px 1fr 24px;gap:20px}.also .ev-logo{max-height:52px}}
+@media (min-width:760px){.past summary{grid-template-columns:72px 150px 1fr 24px;gap:20px}.past .more{padding-left:262px}.past .ev-logo{max-height:52px}.past .ev-logo.own{max-height:48px}.also a{grid-template-columns:72px 150px 1fr 24px;gap:20px}.also .ev-logo{max-height:52px}}
 </style>
 </head>
 <body>
@@ -307,59 +311,59 @@ footer{background:var(--band);color:#8d9a80;padding-block:20px;font-size:.9rem;b
         <summary class="past-title"><span>Voorbije evenementen <em>(14)</em></span></summary>
       <div class="past">
         <details>
-          <summary><span class="d">11 okt</span><span class="t">Trailrun Leopoldsburg<small>Te gast &middot; 5, 10, 16 en 21 km</small></span></summary>
+          <summary><span class="d">11 okt</span><span class="lg"><img class="ev-logo chip" src="images/events/d45-leopoldsburg.webp" alt="D45 Leopoldsburg" width="416" height="268" loading="lazy"></span><span class="t">Trailrun Leopoldsburg<small>Te gast &middot; 5, 10, 16 en 21 km</small></span></summary>
           <div class="more"><p>Trailrun over militair domein in Leopoldsburg. Start om 10:00 aan de militaire atletiekpiste.</p></div>
         </details>
         <details>
-          <summary><span class="d">1 mei</span><span class="t">Social Run Warmbeekvallei Achel<small>Lussen van 3, 4, 6 en 14 km</small></span></summary>
+          <summary><span class="d">1 mei</span><span class="lg"><img class="ev-logo own" src="logo-paw.webp" alt="Canitrail Bocholt" width="275" height="256" loading="lazy"></span><span class="t">Social Run Warmbeekvallei Achel<small>Lussen van 3, 4, 6 en 14 km</small></span></summary>
           <div class="more"><p>We vieren de dag van arbeid met een social run in Achel. Verzamelen om 8:30 aan instapplaats 't Mulke, Molendijk 45, Hamont-Achel.</p><a class="link" href="https://www.facebook.com/events/1693133424649907">Meer info</a></div>
         </details>
         <details>
-          <summary><span class="d">9 mrt</span><span class="t">Canitrail #12 Opitter<small>Nationaal park Hoge Kempen</small></span></summary>
+          <summary><span class="d">9 mrt</span><span class="lg"><img class="ev-logo own" src="logo-paw.webp" alt="Canitrail Bocholt" width="275" height="256" loading="lazy"></span><span class="t">Canitrail #12 Opitter<small>Nationaal park Hoge Kempen</small></span></summary>
           <div class="more"><p>Op de laatste zondag van het carnavalsverlof verzamelen we om 9u aan de Pollismolen, gelegen aan de Itterbeek te Opitter (Bree). Vanhieruit duiken we het Nationaal park Hoge Kempen in.</p><a class="link" href="https://www.facebook.com/groups/977872694013026">Meer info</a></div>
         </details>
         <details>
-          <summary><span class="d">9 feb</span><span class="t">Canitrail #11 Hamont</span></summary>
+          <summary><span class="d">9 feb</span><span class="lg"><img class="ev-logo own" src="logo-paw.webp" alt="Canitrail Bocholt" width="275" height="256" loading="lazy"></span><span class="t">Canitrail #11 Hamont</span></summary>
           <div class="more"><a class="link" href="https://www.facebook.com/groups/977872694013026">Meer info</a></div>
         </details>
         <details>
-          <summary><span class="d">12 jan</span><span class="t">Canitrail #10 Bocholt (Reppel)</span></summary>
+          <summary><span class="d">12 jan</span><span class="lg"><img class="ev-logo own" src="logo-paw.webp" alt="Canitrail Bocholt" width="275" height="256" loading="lazy"></span><span class="t">Canitrail #10 Bocholt (Reppel)</span></summary>
           <div class="more"><p>Startplaats: parking tussen voetbal en ruiterhal, Eikenlaan 8, 3950 Bocholt.</p><a class="link" href="https://www.facebook.com/groups/977872694013026">Meer info</a></div>
         </details>
         <details>
-          <summary><span class="d">1 dec</span><span class="t">Canitrail #9 Lommel</span></summary>
+          <summary><span class="d">1 dec</span><span class="lg"><img class="ev-logo own" src="logo-paw.webp" alt="Canitrail Bocholt" width="275" height="256" loading="lazy"></span><span class="t">Canitrail #9 Lommel</span></summary>
           <div class="more"><p>Startplaats: House of Nature parking, Speelpleinstraat z/n, Lommel.</p><a class="link" href="https://www.facebook.com/events/s/canitrail-9-lommel/416037804890547">Meer info</a></div>
         </details>
         <details>
-          <summary><span class="d">3 nov</span><span class="t">Canitrail #8 Laurabossen Weert<small>3,5 en 7 km</small></span></summary>
+          <summary><span class="d">3 nov</span><span class="lg"><img class="ev-logo own" src="logo-paw.webp" alt="Canitrail Bocholt" width="275" height="256" loading="lazy"></span><span class="t">Canitrail #8 Laurabossen Weert<small>3,5 en 7 km</small></span></summary>
           <div class="more"><p>Startplaats: Zuid-Willemsvaart, Lozerweg, Weert (51.224451, 5.606739).</p><a class="link" href="https://www.facebook.com/events/1293315178746631/">Meer info</a></div>
         </details>
         <details>
-          <summary><span class="d">17 okt</span><span class="t">Canitrail #7 Jagersmaan Nighttrail</span></summary>
+          <summary><span class="d">17 okt</span><span class="lg"><img class="ev-logo own" src="logo-paw.webp" alt="Canitrail Bocholt" width="275" height="256" loading="lazy"></span><span class="t">Canitrail #7 Jagersmaan Nighttrail</span></summary>
           <div class="more"><p>We trekken het bos in voor een nachttrail. Breng een (hoofd)lamp mee en voorzie je hond van een lichtje. Op 17 oktober kregen we een Jagersmaan te zien, de grootste supermaan van het jaar.</p><a class="link" href="https://www.facebook.com/events/1130211635261975">Meer info</a></div>
         </details>
         <details>
-          <summary><span class="d">4 aug</span><span class="t">Canitrail #6 Smeetshof Bocholt<small>2, 4, 6 en 10 km</small></span></summary>
+          <summary><span class="d">4 aug</span><span class="lg"><img class="ev-logo own" src="logo-paw.webp" alt="Canitrail Bocholt" width="275" height="256" loading="lazy"></span><span class="t">Canitrail #6 Smeetshof Bocholt<small>2, 4, 6 en 10 km</small></span></summary>
           <div class="more"><p>In natuurgebied Kempenbroek ligt het grensmoeras Het Smeetshof. We starten op de veldwegen rond de Smeetshoeve en door de eikendreef, met een lusje door nattere grond. Vertrek om 8u30 aan Natuurpunt, Smeetshofweg 1, Bocholt.</p><a class="link" href="https://www.facebook.com/events/499391629484813">Meer info</a></div>
         </details>
         <details>
-          <summary><span class="d">14 jul</span><span class="t">Canitrail #5 Resterheide<small>2,5, 5 en 6,5 km</small></span></summary>
+          <summary><span class="d">14 jul</span><span class="lg"><img class="ev-logo own" src="logo-paw.webp" alt="Canitrail Bocholt" width="275" height="256" loading="lazy"></span><span class="t">Canitrail #5 Resterheide<small>2,5, 5 en 6,5 km</small></span></summary>
           <div class="more"><p>Resterheide is een natuurgebied van Bosland op de grens van Wijchmaal en Hechtel-Eksel. Er zijn verschillende uitgepijlde routes die we aan elkaar breien. Startplaats: Het Begijntje. Na de run zorgen we voor een hapje en een drankje.</p><a class="link" href="https://www.facebook.com/events/1950541392032010">Meer info</a></div>
         </details>
         <details>
-          <summary><span class="d">16 jun</span><span class="t">Canitrail #4 Kaulille<small>Lussen van 4 en 6 km</small></span></summary>
+          <summary><span class="d">16 jun</span><span class="lg"><img class="ev-logo own" src="logo-paw.webp" alt="Canitrail Bocholt" width="275" height="256" loading="lazy"></span><span class="t">Canitrail #4 Kaulille<small>Lussen van 4 en 6 km</small></span></summary>
           <div class="more"><p>Parkeer- en startplaats aan het kruispunt Kettingbrugweg en Belgebergstraat (vroegere "schuttekamer" op Google Maps). Twee lussen waarbij we terug langs het startpunt passeren.</p><a class="link" href="https://www.facebook.com/events/341353515396984">Meer info</a></div>
         </details>
         <details>
-          <summary><span class="d">2 jun</span><span class="t">Canitrail #3 Hobos</span></summary>
+          <summary><span class="d">2 jun</span><span class="lg"><img class="ev-logo own" src="logo-paw.webp" alt="Canitrail Bocholt" width="275" height="256" loading="lazy"></span><span class="t">Canitrail #3 Hobos</span></summary>
           <div class="more"><p>In het Hobos te Pelt volgen we de bepijlde wandelroutes.</p><a class="link" href="https://www.facebook.com/events/1112858446682496/">Meer info</a></div>
         </details>
         <details>
-          <summary><span class="d">18 mei</span><span class="t">Canitrail #2 Lozerheide</span></summary>
+          <summary><span class="d">18 mei</span><span class="lg"><img class="ev-logo own" src="logo-paw.webp" alt="Canitrail Bocholt" width="275" height="256" loading="lazy"></span><span class="t">Canitrail #2 Lozerheide</span></summary>
           <div class="more"><p>Op zaterdag 18 mei de tweede canitrail in het mooie Lozen. Let op: er is een seizoensrally in Reppel.</p><a class="link" href="https://www.facebook.com/events/3751949205132484/">Meer info</a></div>
         </details>
         <details>
-          <summary><span class="d">5 mei</span><span class="t">Canitrail #1 Kennismakingsloop<small>Ongeveer 5 km</small></span></summary>
+          <summary><span class="d">5 mei</span><span class="lg"><img class="ev-logo own" src="logo-paw.webp" alt="Canitrail Bocholt" width="275" height="256" loading="lazy"></span><span class="t">Canitrail #1 Kennismakingsloop<small>Ongeveer 5 km</small></span></summary>
           <div class="more"><p>We starten om 10u aan het clublokaal van hondenschool De Trouwe Vriend, Eikenlaan, 3950 Bocholt, voor een rondje door Reppel. We blijven in groep en zoeken een tempo dat voor iedereen aangenaam is. Samen uit, samen thuis. De honden blijven te allen tijde aangelijnd.</p><a class="link" href="https://www.facebook.com/events/1168178674354447">Meer info</a></div>
         </details>
       </div>
