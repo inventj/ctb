@@ -121,13 +121,14 @@ section{padding-block:56px}
 .also-lead{margin:6px 0 0;color:var(--muted)}
 .also{list-style:none;margin:12px 0 0;padding:0;border-top:1px solid var(--line)}
 .also li{border-bottom:1px solid var(--line)}
-.also a{display:grid;grid-template-columns:64px 1fr 24px;align-items:center;gap:12px;min-height:64px;padding:10px 0;text-decoration:none}
+.also a{display:grid;grid-template-columns:64px 76px 1fr 20px;align-items:center;gap:10px;min-height:64px;padding:10px 0;text-decoration:none}
 .also a::after{content:"\2197";font:600 1.2rem var(--font-body);color:var(--accent);text-align:center}
 .also a:hover .t{color:var(--accent)}
 .also .d{font:800 1rem/1.1 var(--font-display);color:var(--accent);text-transform:uppercase}
 .also .t{font-weight:600;min-width:0}
-.also .ev-logo{display:block;height:34px;width:auto;margin:0 0 6px}
-.also .ev-logo.chip{height:42px;padding:5px 10px;background:#fff;border-radius:8px}
+.also .lg{display:flex;align-items:center;justify-content:center}
+.also .ev-logo{display:block;max-width:100%;height:auto;max-height:44px;width:auto}
+.also .ev-logo.chip{padding:4px 6px;background:#fff;border-radius:6px;box-sizing:border-box;width:100%;height:auto;object-fit:contain}
 .also .t small{display:block;color:var(--muted);font-weight:400}
 .past-wrap{margin-top:44px;border-top:1px solid var(--line)}
 .past-wrap>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;font:800 1.3rem/1.1 var(--font-display)}
@@ -212,6 +213,7 @@ footer{background:var(--band);color:#8d9a80;padding-block:20px;font-size:.9rem;b
   .gallery figure{flex-basis:340px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (min-width:760px){.also a{grid-template-columns:72px 150px 1fr 24px;gap:20px}.also .ev-logo{max-height:52px}}
 </style>
 </head>
 <body>
@@ -297,8 +299,8 @@ footer{background:var(--band);color:#8d9a80;padding-block:20px;font-size:.9rem;b
       <h3 class="also-title">Je komt ons ook tegen op</h3>
       <p class="also-lead">Naast onze eigen trails lopen we ook mee op evenementen van anderen.</p>
       <ul class="also">
-        <li><a href="https://www.buurtsportdiensten.be" target="_blank" rel="noopener"><span class="d">18 okt</span><span class="t"><img class="ev-logo" src="images/events/bosloopcriterium.webp" alt="" width="516" height="119" loading="lazy">Bosloopcriterium Bocholt<small>Intergemeentelijk recreatief bosloopcriterium, editie 2026</small></span></a></li>
-        <li><a href="https://www.sfc.be" target="_blank" rel="noopener"><span class="d">15 nov</span><span class="t"><img class="ev-logo chip" src="images/events/sfc.webp" alt="" width="583" height="171" loading="lazy">SFC Trail Run Walk, Heusden-Zolder<small>6, 10, 16 en 21 km &middot; start 9:00 &middot; ten voordele van kansarme jongeren</small></span></a></li>
+        <li><a href="https://www.buurtsportdiensten.be" target="_blank" rel="noopener"><span class="d">18 okt</span><span class="lg"><img class="ev-logo" src="images/events/bosloopcriterium.webp" alt="" width="516" height="119" loading="lazy"></span><span class="t">Bosloopcriterium Bocholt<small>Editie 2026 &middot; 6 zondagen loopplezier</small></span></a></li>
+        <li><a href="https://www.sfc.be" target="_blank" rel="noopener"><span class="d">15 nov</span><span class="lg"><img class="ev-logo chip" src="images/events/sfc.webp" alt="" width="583" height="171" loading="lazy"></span><span class="t">SFC Trail Run Walk, Heusden-Zolder<small>6, 10, 16 en 21 km &middot; start 9:00 &middot; ten voordele van kansarme jongeren</small></span></a></li>
       </ul>
 
       <details class="past-wrap">
