@@ -484,6 +484,22 @@ footer{background:var(--band);color:#8d9a80;padding-block:20px;font-size:.9rem;b
 </div>
 
 <script>
+// Willekeurige volgorde bij elk bezoek (zonder JavaScript blijft de standaardvolgorde)
+(function () {
+  function shuffle(box) {
+    if (!box) return;
+    var items = Array.prototype.slice.call(box.children);
+    for (var i = items.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = items[i]; items[i] = items[j]; items[j] = t;
+    }
+    items.forEach(function (el) { box.appendChild(el); });
+  }
+  shuffle(document.querySelector('.gallery'));
+  shuffle(document.querySelector('.dogs'));
+})();
+</script>
+<script>
 (function(){
   var btn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
   function set(o){nav.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);btn.textContent=o?'Sluit':'Menu'}
