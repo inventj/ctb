@@ -116,7 +116,13 @@ section{padding-block:56px}
 .date{display:inline-flex;align-items:baseline;gap:.4rem;font:800 1.1rem var(--font-display);color:var(--accent);margin-bottom:.4rem}
 .date b{font-size:2.4rem;line-height:1}
 .facts{margin:0 0 1.1em;padding:0;list-style:none;color:var(--muted)}
-.past-title{margin-top:44px;font-size:1.3rem}
+.past-wrap{margin-top:44px;border-top:1px solid var(--line)}
+.past-wrap>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;font:800 1.3rem/1.1 var(--font-display)}
+.past-wrap>summary::-webkit-details-marker{display:none}
+.past-wrap>summary::after{content:"+";font:600 1.5rem var(--font-body);color:var(--accent)}
+.past-wrap[open]>summary::after{content:"–"}
+.past-wrap>summary em{font:400 1rem var(--font-body);color:var(--muted);font-style:normal}
+.past-wrap .past{margin-top:0}
 .past{margin-top:12px;border-top:1px solid var(--line)}
 .past details{border-bottom:1px solid var(--line)}
 .past summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:64px 1fr 24px;align-items:center;gap:12px;min-height:64px;padding:10px 0}
@@ -274,7 +280,8 @@ footer{background:var(--band);color:#8d9a80;padding-block:20px;font-size:.9rem;b
         </div>
       </article>
 
-      <h3 class="past-title">Voorbije trails</h3>
+      <details class="past-wrap">
+        <summary class="past-title"><span>Voorbije trails <em>(13)</em></span></summary>
       <div class="past">
         <details>
           <summary><span class="d">1 mei</span><span class="t">Social Run Warmbeekvallei Achel<small>Lussen van 3, 4, 6 en 14 km</small></span></summary>
@@ -329,6 +336,7 @@ footer{background:var(--band);color:#8d9a80;padding-block:20px;font-size:.9rem;b
           <div class="more"><p>We starten om 10u aan het clublokaal van hondenschool De Trouwe Vriend, Eikenlaan, 3950 Bocholt, voor een rondje door Reppel. We blijven in groep en zoeken een tempo dat voor iedereen aangenaam is. Samen uit, samen thuis. De honden blijven te allen tijde aangelijnd.</p><a class="link" href="https://www.facebook.com/events/1168178674354447">Meer info</a></div>
         </details>
       </div>
+      </details>
     </div>
   </section>
 
