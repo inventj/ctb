@@ -116,6 +116,17 @@ section{padding-block:56px}
 .date{display:inline-flex;align-items:baseline;gap:.4rem;font:800 1.1rem var(--font-display);color:var(--accent);margin-bottom:.4rem}
 .date b{font-size:2.4rem;line-height:1}
 .facts{margin:0 0 1.1em;padding:0;list-style:none;color:var(--muted)}
+/* ook te zien op */
+.also-title{margin-top:44px;font-size:1.3rem}
+.also-lead{margin:6px 0 0;color:var(--muted)}
+.also{list-style:none;margin:12px 0 0;padding:0;border-top:1px solid var(--line)}
+.also li{border-bottom:1px solid var(--line)}
+.also a{display:grid;grid-template-columns:64px 1fr 24px;align-items:center;gap:12px;min-height:64px;padding:10px 0;text-decoration:none}
+.also a::after{content:"\2197";font:600 1.2rem var(--font-body);color:var(--accent);text-align:center}
+.also a:hover .t{color:var(--accent)}
+.also .d{font:800 1rem/1.1 var(--font-display);color:var(--accent);text-transform:uppercase}
+.also .t{font-weight:600;min-width:0}
+.also .t small{display:block;color:var(--muted);font-weight:400}
 .past-wrap{margin-top:44px;border-top:1px solid var(--line)}
 .past-wrap>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;font:800 1.3rem/1.1 var(--font-display)}
 .past-wrap>summary::-webkit-details-marker{display:none}
@@ -280,9 +291,20 @@ footer{background:var(--band);color:#8d9a80;padding-block:20px;font-size:.9rem;b
         </div>
       </article>
 
+      <h3 class="also-title">Je komt ons ook tegen op</h3>
+      <p class="also-lead">Naast onze eigen trails lopen we ook mee op evenementen van anderen.</p>
+      <ul class="also">
+        <li><a href="https://www.buurtsportdiensten.be" target="_blank" rel="noopener"><span class="d">18 okt</span><span class="t">Bosloopcriterium Bocholt<small>Intergemeentelijk recreatief bosloopcriterium, editie 2026</small></span></a></li>
+        <li><a href="https://www.sfc.be" target="_blank" rel="noopener"><span class="d">15 nov</span><span class="t">SFC Trail Run Walk, Heusden-Zolder<small>6, 10, 16 en 21 km &middot; start 9:00 &middot; ten voordele van kansarme jongeren</small></span></a></li>
+      </ul>
+
       <details class="past-wrap">
-        <summary class="past-title"><span>Voorbije trails <em>(13)</em></span></summary>
+        <summary class="past-title"><span>Voorbije evenementen <em>(14)</em></span></summary>
       <div class="past">
+        <details>
+          <summary><span class="d">11 okt</span><span class="t">Trailrun Leopoldsburg<small>Te gast &middot; 5, 10, 16 en 21 km</small></span></summary>
+          <div class="more"><p>Trailrun over militair domein in Leopoldsburg. Start om 10:00 aan de militaire atletiekpiste.</p></div>
+        </details>
         <details>
           <summary><span class="d">1 mei</span><span class="t">Social Run Warmbeekvallei Achel<small>Lussen van 3, 4, 6 en 14 km</small></span></summary>
           <div class="more"><p>We vieren de dag van arbeid met een social run in Achel. Verzamelen om 8:30 aan instapplaats 't Mulke, Molendijk 45, Hamont-Achel.</p><a class="link" href="https://www.facebook.com/events/1693133424649907">Meer info</a></div>
