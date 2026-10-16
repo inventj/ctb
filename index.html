@@ -176,12 +176,14 @@ section{padding-block:56px}
 .hero-sponsors a{display:flex;align-items:center;text-decoration:none}
 .hero-sponsors .vlier{height:76px;width:auto}
 .hero-sponsors .entr{height:32px;width:auto}
-@media (min-width:760px){.hero-sponsors .vlier{height:92px}}
+.hero-sponsors .ah{display:flex;align-items:center}
+.hero-sponsors .ah img{height:76px;width:auto}
+@media (min-width:760px){.hero-sponsors .vlier{height:92px}.hero-sponsors .ah img{height:88px}}
 /* sponsors */
 .sponsors{display:flex;flex-wrap:wrap;gap:12px;list-style:none;margin:28px 0 0;padding:0}
 .sponsor-card{display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;height:120px;width:min(100%,170px)}
 .sponsor-card>a:not(.x){display:flex;align-items:center;justify-content:center;width:100%;height:100%}
-.sponsor-card img{height:96px;width:auto;max-width:100%}
+.sponsor-card img{height:96px;width:auto;max-width:calc(100% - 24px);object-fit:contain}
 .sponsor-card.banner{width:min(100%,170px);background:var(--band);border-color:var(--band)}
 .sponsor-card.banner a{display:flex;align-items:center;justify-content:center;width:100%;height:100%;padding:0 22px}
 .sponsor-card.banner img{height:auto;width:100%;max-width:130px}
@@ -267,6 +269,7 @@ footer{background:var(--band);color:#8d9a80;padding-block:20px;font-size:.9rem;b
           <p>Canitrail Bocholt bedankt haar kledijsponsors</p>
           <a href="https://ateliervlier.be/" target="_blank" rel="noopener" aria-label="Atelier Vlier"><img class="vlier" src="images/sponsors/atelier-vlier-wit.svg" alt="Atelier Vlier" height="52"></a>
           <a href="https://entr.online" target="_blank" rel="noopener" aria-label="Entr.Online"><img class="entr" src="images/sponsors/entr-online-wit.svg" alt="Entr.Online" width="132" height="35"></a>
+          <span class="ah"><img src="images/sponsors/animal-happiness-wit.webp" alt="Animal Happiness – dier in balans" width="788" height="474"></span>
         </div>
       </div>
       <div class="hero-photo">
@@ -451,6 +454,10 @@ footer{background:var(--band);color:#8d9a80;padding-block:20px;font-size:.9rem;b
             <img class="logo-on-light" src="images/sponsors/atelier-vlier-zwart.svg" alt="Atelier Vlier" height="80" loading="lazy">
             <img class="logo-on-dark" src="images/sponsors/atelier-vlier-wit.svg" alt="Atelier Vlier" height="80" loading="lazy">
           </a>
+        </li>
+        <li class="sponsor-card">
+          <img class="logo-on-light" src="images/sponsors/animal-happiness-zwart.webp" alt="Animal Happiness – dier in balans" width="788" height="474" loading="lazy">
+          <img class="logo-on-dark" src="images/sponsors/animal-happiness-wit.webp" alt="Animal Happiness – dier in balans" width="788" height="474" loading="lazy">
         </li>
         <li class="sponsor-card banner">
           <a href="https://entr.online" target="_blank" rel="noopener"><img src="images/sponsors/entr-online-wit.svg" alt="Entr.Online" width="190" height="50" loading="lazy"></a>
